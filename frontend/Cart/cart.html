@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/CSS/cart.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+           <a href="/Home/home.html"> <h1>Wholesale Grocery Store</h1></a>
+            <a href="/Home/home.html" id="Home">Home</a>
+            <a href="/Cart/cart.html" id="cart">Cart</a>
+        </nav>
+    </header>
+    
+    <h1>Your Shopping Cart</h1>
+    
+    <table id="cart-items">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Cart items will be dynamically inserted here -->
+        </tbody>
+    </table>
+    
+    <div id="total-price">
+        <strong>Total Price: ₹<span id="total">0.00</span></strong>
+    </div>
+    
+    <button id="checkout-button">Proceed to Checkout</button>
+
+    <script src="/scripts/cart.js"></script>
+</body>
+</html>

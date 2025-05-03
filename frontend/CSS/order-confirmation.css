@@ -1,0 +1,131 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Confirmation Container */
+.confirmation-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Order Confirmed Text */
+h1 {
+    color: #28a745;
+    font-size: 28px;
+    font-weight: bold;
+    animation: popIn 1s ease-in-out;
+}
+
+/* Order Details Box */
+.order-details {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: left;
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.1);
+    animation: slideUp 1s ease-in-out;
+}
+
+.order-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Redirect Message */
+.redirect-message {
+    font-size: 14px;
+    color: gray;
+    margin-top: 10px;
+}
+
+/* Home Button */
+.home-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.home-button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0px 7px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Countdown Timer */
+#countdown {
+    font-weight: bold;
+    color: #d9534f;
+    font-size: 18px;
+    animation: pulse 1s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="/CSS/payment.css">
+</head>
+<body>
+    <header>
+        <div class="website-name">Wholesale Grocery Store</div>
+    </header>
+
+    <div class="payment-container">
+        <h1>Choose Your Payment Method</h1>
+        
+        <div class="payment-options">
+            <div class="payment-option">
+                <input type="radio" name="payment" value="Cash on Delivery" checked>
+                <span>Cash on Delivery</span>
+            </div>
+            
+            <div class="payment-option">
+                <input type="radio" name="payment" value="UPI">
+                <span>UPI Payment</span>
+            </div>
+            
+            <div class="payment-option">
+                <input type="radio" name="payment" value="Credit Card">
+                <span>Credit/Debit Card</span>
+            </div>
+        </div>
+
+        <button id="pay-now">Proceed to Payment</button>
+    </div>
+
+    <script src="/scripts/payment.js"></script>
+</body>
+</html>

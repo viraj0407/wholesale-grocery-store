@@ -1,0 +1,130 @@
+/* ======= General Page Styles ======= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* ======= Header ======= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ======= Container ======= */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 120px; /* Pushes content below fixed header */
+}
+
+/* ======= Signup Box ======= */
+.login-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* ======= Input Fields ======= */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+/* ======= Input Focus Effect ======= */
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ======= Show Password Checkbox Styling ======= */
+.show-password-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0 15px 0;
+}
+
+.show-password-container input {
+    width: auto;
+    margin-right: 5px;
+}
+
+/* ======= Buttons ======= */
+button {
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* ======= Button Hover Effect ======= */
+button:hover {
+    background: #0056b3;
+}
+
+/* ======= Links ======= */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 480px) {
+    .login-box {
+        width: 90%;
+    }
+}
+
+/* ======= Signup Form Styles ======= */
+.signup h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup a {
+    margin-top: 20px;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+}

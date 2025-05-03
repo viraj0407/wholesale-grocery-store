@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="/CSS/billing.css">
+</head>
+<body>
+    <header>
+        <div class="website-name">Wholesale Grocery Store</div>
+    </header>
+    
+    <div class="container">
+        <h1>Billing Details</h1>
+        
+        <div id="order-summary" class="order-items">
+            <h2>Order Summary</h2>
+            <table id="billing-items">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cart items will be dynamically inserted here -->
+                </tbody>
+            </table>
+            <div id="final-total">
+                <strong>Total Amount: ₹<span id="total-amount">0.00</span></strong>
+            </div>
+        </div>
+
+        <div class="billing-form">
+            <h2>Enter Billing Details</h2>
+            <form id="billing-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="address">Address:</label>
+                <textarea id="address" required></textarea>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required>
+
+                <button type="submit">Confirm Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/scripts/billing.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Grocery Store</title>
+    <link rel="stylesheet" href="/CSS/home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Wholesale Grocery Store</h1>
+            <a href="home.html" id="Home">Home</a>
+            <input type="text" id="searchBar" placeholder="Search for groceries...">
+            <a href="/Cart/cart.html" id="cart">Cart</a>
+            <a href="/Home/login.html" id="loginBtn">Login</a>
+        </nav>
+    </header>
+    <!-- Profile Dropdown -->
+    <div id="profile-menu" class="profile-menu">
+        <div id="profile-dropdown" class="profile-dropdown">
+            <p id="user-email">Loading...</p>
+            <button onclick="logoutUser()">Logout</button>
+        </div>
+    </div>
+    <section class="home">
+        <div class="content">
+            <h3>Fresh and Organic Grocery for You</h3>
+            <div class="panel">
+                <div class="category" data-category="fruits">
+                    <img src="fruits.jpeg" alt="Fruits">
+                    <p>Fruits</p>
+                </div>
+                <div class="category" data-category="dairy">
+                    <img src="dairy_product.jpeg" alt="Dairy Product">
+                    <p>Dairy Products</p>
+                </div>
+                <div class="category" data-category="vegetables">
+                    <img src="vegetables.jpeg" alt="Vegetables">
+                    <p>Vegetables</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="product-container">
+        <h2 class="product-title">Products</h2>
+        <div id="grocery-container" class="product-list"></div>
+    </div>
+
+    <div id="profile-info" style="display: none;">
+        <p id="user-email"></p>
+    </div>
+
+    <script src="/scripts/home.js"></script>
+</body>
+</html>

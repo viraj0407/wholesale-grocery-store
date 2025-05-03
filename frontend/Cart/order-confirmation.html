@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="/CSS/order-confirmation.css">
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1>🎉 Order Confirmed! 🎉</h1>
+        <p>Thank you for shopping with us. Your order has been placed successfully.</p>
+        
+        <div class="order-details">
+            <h2>Order Summary</h2>
+            <p><strong>Order ID:</strong> <span id="order-id"></span></p>
+            <p><strong>Payment Method:</strong> <span id="payment-method"></span></p>
+            <p><strong>Total Amount:</strong> ₹<span id="total-amount"></span></p>
+            <p><strong>Customer:</strong> <span id="customer-name"></span></p>
+            <p><strong>Delivery Address:</strong> <span id="customer-address"></span></p>
+
+        </div>
+
+        <p class="redirect-message">Redirecting to home page in <span id="countdown">5</span> seconds...</p>
+        <a href="/Home/home.html" class="home-button">Go to Home</a>
+    </div>
+
+    <script src="/scripts/order-confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Grocery Upload</title>
+</head>
+<body>
+    <h1>Upload Grocery Item</h1>
+    <form action="http://localhost:4000/add" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+        
+        <label for="wholesale_Price">Wholesale Price:</label>
+        <input type="number" id="wholesale_Price" name="wholesale_Price" required><br><br>
+        
+        <label for="retail_Price">Retail Price:</label>
+        <input type="number" id="retail_Price" name="retail_Price" required><br><br>
+        
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" required><br><br>
+        
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required><br><br>
+        
+        <button type="submit">Upload Grocery</button>
+    </form>
+</body>
+</html>

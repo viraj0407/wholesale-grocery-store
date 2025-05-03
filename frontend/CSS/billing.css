@@ -1,0 +1,105 @@
+/* ======= General Page Styles ======= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ======= Header ======= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ======= Container ======= */
+.container {
+    margin-top: 120px;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* ======= Cart Summary ======= */
+.cart-summary, .billing-form, #payment-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-top: 20px;
+}
+
+#billing-items {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#billing-items th, #billing-items td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+#final-total {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ======= Form Styles ======= */
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* ======= Hidden Section for Payment Method ======= */
+.hidden {
+    display: none;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+}

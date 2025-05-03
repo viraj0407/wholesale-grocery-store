@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale Grocery Store - Admin Panel</title>
+    <link rel="stylesheet" href="/CSS/admin.css">
+</head>
+<body>
+    <header>
+        <h1>Wholesale Grocery Store Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="#products" onclick="showSection('products')">Products</a></li>
+                <li><a href="#orders" onclick="showSection('orders')">Orders</a></li>
+                <li><a href="#add-product" onclick="showSection('add-product')">Add Product</a></li>
+                <li><a href="#profile" onclick="showSection('profile')">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Product List Section -->
+        <section id="products" class="section-content">
+            <h2>Products List</h2>
+            <table id="product-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Products will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Order List Section -->
+        <section id="orders" class="section-content">
+            <h2>Orders List</h2>
+            <table id="order-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Orders will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Add Product Section -->
+        <section id="add-product" class="section-content">
+            <h2>Add Product</h2>
+            <form id="add-product-form" enctype="multipart/form-data">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="name" required><br>
+
+                <label for="product-description">Description:</label>
+                <textarea id="product-description" name="description" required></textarea><br>
+
+                <label for="product-wholesale-price">Wholesale Price:</label>
+                <input type="number" id="product-wholesale-price" name="wholesale_Price" step="0.01" min="0" required><br>
+
+                <label for="product-retail-price">Retail Price:</label>
+                <input type="number" id="product-retail-price" name="retail_Price" step="0.01" min="0" required><br>
+
+                <label for="product-category">Category:</label>
+                <select id="product-category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="fruits">Fruits</option>
+                    <option value="vegetables">Vegetables</option>
+                    <option value="dairy">Dairy Products</option>
+                </select>
+                <br>
+
+                <label for="product-image">Product Image:</label>
+                <input type="file" id="product-image" name="image" accept="image/*" required onchange="previewImage(event)"><br>
+                
+                <div id="image-preview-container">
+                    <img id="image-preview" src="" alt="Image Preview" style="max-width: 200px; display: none;">
+                </div>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section-content">
+            <h2>User Profile</h2>
+            <form id="profile-form">
+                <!-- Profile Image -->
+                <div class="profile-image-container">
+                    <img id="profile-image" src="default.png" alt="Profile Image">
+                    <input type="file" id="profile-image-upload" accept="image/*" onchange="previewImage(event)">
+                </div>
+        
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username" required><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="user123@example.com" required><br>
+        
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" placeholder="123-456-7890"><br>
+        
+                <button type="button" onclick="updateProfile()">Update Profile</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Wholesale Grocery Store</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+</html>

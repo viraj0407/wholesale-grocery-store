@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Website Name */
+.website-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* Payment Container */
+.payment-container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    margin-top: 80px; /* Added margin to avoid overlap with fixed header */
+}
+
+/* Payment Heading */
+.payment-container h1 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Payment Options */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Hover Effect */
+.payment-option:hover {
+    background: #cce0ff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 255, 0.2);
+    transform: scale(1.03);
+}
+
+/* Hide Default Radio Button */
+.payment-option input {
+    display: none;
+}
+
+/* Payment Label */
+.payment-option label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    flex-grow: 1;
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Active Selection Effect */
+.payment-option input:checked + label {
+    background: #007BFF;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Payment Button */
+#pay-now {
+    margin-top: 20px;
+    padding: 12px 18px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(40, 167, 69, 0.2);
+    width: 100%;
+}
+
+#pay-now:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .payment-container {
+        width: 95%;
+    }
+
+    .payment-option {
+        flex-direction: column;
+        text-align: center;
+    }
+}
