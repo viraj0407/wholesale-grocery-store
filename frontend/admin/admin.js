@@ -36,10 +36,11 @@ function showSection(sectionId) {
     }
 }
 
+const BACKEND_URL = "https://wholesale-grocery-store.onrender.com";
 // Function to load products from server
 async function loadProducts() {
     try {
-        const response = await fetch('http://localhost:4000/api/grocery/list');
+        const response = await fetch(`h${BACKEND_URL}/api/grocery/list)`);
         if (!response.ok) throw new Error('Failed to fetch products');
         
         const data = await response.json();
@@ -102,7 +103,7 @@ async function addProduct() {
     }
     
     try {
-        const response = await fetch('http://localhost:4000/api/grocery/add', {
+        const response = await fetch(`${BACKEND_URL}/api/grocery/add`, {
             method: 'POST',
             body: formData
         });
@@ -133,7 +134,7 @@ async function editProduct(productId) {
     if (!productId) return;
     
     try {
-        const response = await fetch(`http://localhost:4000/api/grocery/${productId}`);
+        const response = await fetch(`${BACKEND_URL}/api/grocery/${productId}`);
         if (!response.ok) throw new Error('Failed to fetch product');
         
         const result = await response.json();
@@ -186,7 +187,7 @@ async function updateProduct() {
     const productId = formData.get('id');
     
     try {
-        const response = await fetch('http://localhost:4000/api/grocery/update', {
+        const response = await fetch(`${BACKEND_URL}/api/grocery/update`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -218,7 +219,7 @@ async function deleteProduct(productId) {
     if (!productId || !confirm('Are you sure you want to delete this product?')) return;
     
     try {
-        const response = await fetch('http://localhost:4000/api/grocery/remove', {
+        const response = await fetch(`${BACKEND_URL}/api/grocery/remove`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
             totalPrice += (item.price || 0) * item.quantity;
         });
 
-        totalElement.textContent = `₹${totalPrice.toFixed(2)}`;
+        totalElement.textContent = `${totalPrice.toFixed(2)}`;
 
         const totalAmountElement = document.getElementById('total-amount');
         if (totalAmountElement) {

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const togglePassword = document.getElementById("toggle-password");
     const passwordField = document.getElementById("signup-password");
     const confirmPasswordField = document.getElementById("confirm-password");
+    const BACKEND_URL = "https://wholesale-grocery-store.onrender.com";
 
     // Toggle password visibility
     togglePassword.addEventListener("change", function () {
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            const response = await fetch("http://localhost:4000/api/grocery/signup", {
+            const response = await fetch(`${BACKEND_URL}/api/grocery/signup`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password })
