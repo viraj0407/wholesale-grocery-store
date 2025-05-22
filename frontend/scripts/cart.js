@@ -1,3 +1,6 @@
+// Define backend URL once for easy updates
+const BACKEND_URL = "https://wholesale-grocery-store.onrender.com";
+
 document.addEventListener("DOMContentLoaded", function() {
     // Debug: Check if elements exist
     console.log('Initializing cart...');
@@ -15,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!checkoutButton) console.error('Error: #checkout-button not found');
 
     function updateCart() {
-        // Check if required elements exist
         if (!cartTableBody || !totalElement) {
             console.error('Required elements missing for updateCart');
             return;
@@ -26,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (cartItems.length === 0) {
             cartTableBody.appendChild(emptyCartMessage);
             totalElement.textContent = '₹0.00';
-            
-            // Add null check for total-amount
+
             const totalAmountElement = document.getElementById('total-amount');
             if (totalAmountElement) {
                 totalAmountElement.textContent = '0.00';
@@ -41,27 +42,26 @@ document.addEventListener("DOMContentLoaded", function() {
         cartItems.forEach(item => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td><img src="http://localhost:4000/api/grocery/images/${item.image}" 
+                <td><img src="${BACKEND_URL}/api/grocery/images/${item.image}" 
                          alt="${item.name}" 
                          class="cart-item-image"
                          onerror="this.src='/images/placeholder.jpg'"></td>
                 <td>${item.name}</td>
                 <td>
-                    <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                    <button aria-label="Decrease quantity of ${item.name}" class="quantity-btn minus" data-id="${item.id}">-</button>
                     <span class="quantity">${item.quantity}</span>
-                    <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                    <button aria-label="Increase quantity of ${item.name}" class="quantity-btn plus" data-id="${item.id}">+</button>
                 </td>
                 <td>₹${(item.price || 0).toFixed(2)}</td>
                 <td>₹${((item.price || 0) * item.quantity).toFixed(2)}</td>
-                <td><button class="remove-btn" data-id="${item.id}">Remove</button></td>
+                <td><button aria-label="Remove ${item.name} from cart" class="remove-btn" data-id="${item.id}">Remove</button></td>
             `;
             cartTableBody.appendChild(row);
             totalPrice += (item.price || 0) * item.quantity;
         });
 
         totalElement.textContent = `₹${totalPrice.toFixed(2)}`;
-        
-        // Add null check for total-amount
+
         const totalAmountElement = document.getElementById('total-amount');
         if (totalAmountElement) {
             totalAmountElement.textContent = totalPrice.toFixed(2);
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Event delegation with error handling
+    // Event delegation for cart buttons
     const cartItemsTable = document.querySelector('#cart-items');
     if (cartItemsTable) {
         cartItemsTable.addEventListener('click', function(e) {
@@ -102,10 +102,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Error: #cart-items table not found');
     }
 
-    // Initialize cart
+    // Initialize cart UI
     updateCart();
 
-    // Checkout button with enhanced error handling
+    // Checkout button handling
     if (checkoutButton) {
         checkoutButton.addEventListener('click', function(e) {
             e.preventDefault();
@@ -118,13 +118,12 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log('Navigating to billing page');
             console.log('Current cart items:', cartItems);
             
-            // Use absolute path to ensure consistent navigation
             window.location.href = "/Cart/billing.html";
         });
     }
 });
 
-// Shared cart count update with error handling
+// Update cart count in UI
 function updateCartCount() {
     try {
         const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
