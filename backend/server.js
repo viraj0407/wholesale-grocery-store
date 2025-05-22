@@ -59,5 +59,5 @@ app.get("/Cart/order-confirmation.html", (req, res) => {
 
 // Start Server
 app.listen(port, () => {
-    console.log(`✅ Server running at http://localhost:${port}`);
+    console.log(`✅ Server running at http://localhost:${port}/Home/home.html`);
 });
