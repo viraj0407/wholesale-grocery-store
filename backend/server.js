@@ -19,7 +19,7 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: "https://wholesale-grocery-store.onrender.com", // ✅ Allow all origins or restrict to your Netlify/Render domain
+  origin: ["'http://localhost:4000'","https://wholesale-grocery-store.onrender.com"], // ✅ Allow all origins or restrict to your Netlify/Render domain
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
