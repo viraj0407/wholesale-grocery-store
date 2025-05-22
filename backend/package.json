@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "server": "nodemon server.js"
+    "start": "npm rebuild bcrypt && node server.js"
   },
   "author": "viraj chavan",
   "license": "ISC",
