@@ -5,13 +5,12 @@
   "type": "module",
   "scripts": {
     "server": "nodemon server.js",
-    "start": "npm rebuild bcrypt && node server.js"
+    "start": "node server.js"
   },
   "author": "viraj chavan",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
