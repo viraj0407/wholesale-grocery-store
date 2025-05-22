@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("search-input");
     const cartCount = document.getElementById("cart-count");
     const profileDropdown = document.getElementById("profile-dropdown");
+    const BACKEND_URL = "https://wholesale-grocery-store.onrender.com"; // 🔁 Replace with your actual Render backend URL
 
-    if (!groceryContainer) return; // Prevent errors if groceryContainer doesn't exist
+    if (!groceryContainer) return;
 
     const loadingIndicator = document.createElement("div");
     loadingIndicator.className = "loading";
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let groceriesData = [];
 
-    fetch("http://localhost:4000/api/grocery/list")
+    fetch(`${BACKEND_URL}/api/grocery/list`)
         .then(res => res.json())
         .then(data => {
             if (data.success && Array.isArray(data.data)) {
@@ -41,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const groceryCard = document.createElement("div");
             groceryCard.className = "grocery-card";
             groceryCard.innerHTML = `
-                <img src="http://localhost:4000/api/grocery/images/${grocery.image}" 
+                <img src="${BACKEND_URL}/api/grocery/images/${grocery.image}" 
                      alt="${grocery.name}" 
                      onerror="this.src='/images/placeholder.jpg'">
                 <h3>${grocery.name}</h3>
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loginBtn.textContent = "Profile";
         loginBtn.href = "#";
 
-        fetch("http://localhost:4000/api/auth/user-details", {
+        fetch(`${BACKEND_URL}/api/auth/user-details`, {
             method: "GET",
             headers: {
                 "Authorization": `Bearer ${authToken}`,
@@ -175,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector(".product-container").style.display = "block";
 
             if (currentCategory === "all") {
-                displayGroceries(groceriesData); // Show all products if "All" is selected
+                displayGroceries(groceriesData);
             } else {
                 const filteredProducts = groceriesData.filter(product =>
                     product.category === currentCategory
